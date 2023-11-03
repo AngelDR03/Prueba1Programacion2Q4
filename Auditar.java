@@ -56,7 +56,15 @@ public class Auditar extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+     private void GuardarActionPerformed(java.awt.event.ActionEvent evt) {                                        
+       String mensaje = "Auditoría de estados de películas realizada.";    
+    jLabel1.setText(mensaje);
+    BlockBuster blockBuster = new BlockBuster();
+    blockBuster.auditarMovieEstados(); 
+    if (blockBuster.getPeliculasAuditadas() == 0) {
+        jLabel1.setText("No se encontraron películas para auditar.");
+    }
+    }    
     private void VolverMainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverMainActionPerformed
         // TODO add your handling code here:
         Main lea=new Main();
@@ -99,6 +107,8 @@ public class Auditar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton Guardar;
     private javax.swing.JToggleButton VolverMain;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
