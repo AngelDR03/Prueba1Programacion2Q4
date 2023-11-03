@@ -7,6 +7,7 @@
  *
  * @author LENOVO
  */
+import javax.swing.JOptionPane;
 public class Agregar extends javax.swing.JFrame {
 
     /**
@@ -110,7 +111,12 @@ public class Agregar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarActionPerformed
-        // TODO add your handling code here:
+        int codigo = Integer.parseInt(jTextField1.getText());
+        String nombreItem = jTextField2.getText();
+        String tipoItem = jTextField3.getText();
+        BlockBuster blockBuster = new BlockBuster();
+        blockBuster.agregarItem(codigo, nombreItem, tipoItem);
+        JOptionPane.showInputDialog("Los Elementos han sido Guardados existosamente.");
     }//GEN-LAST:event_GuardarActionPerformed
 
     private void RegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegresarActionPerformed
