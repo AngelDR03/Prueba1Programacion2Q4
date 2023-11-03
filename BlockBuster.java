@@ -11,13 +11,15 @@ import java.util.ArrayList;
  * @author LENOVO
  */
 public class BlockBuster {
-    
+    private int peliculasAuditadas;
     ArrayList <BlockBusterItem> items;
     
     public BlockBuster() {
         this.items = new ArrayList<>();
     }
-    
+    public int getPeliculasAuditadas() {
+        return peliculasAuditadas;
+    }
     public BlockBusterItem BuscarItem(int code,String type){
         for(BlockBusterItem item : items){
             if (item.getCodigo() == code && ((type.equals("MOVIE") && item instanceof MovieItem) ||
@@ -56,6 +58,7 @@ public class BlockBuster {
         for (BlockBusterItem item : items) {
             if (item instanceof MovieItem) {
                 ((MovieItem) item).EvaluarEstado();
+                 peliculasAuditadas++;
             }
         }
         System.out.println("Auditoría de estados de películas realizada.");
