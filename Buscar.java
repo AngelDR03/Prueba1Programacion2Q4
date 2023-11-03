@@ -97,7 +97,18 @@ public class Buscar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarActionPerformed
-        // TODO add your handling code here:
+      int codigo = Integer.parseInt(jTextField1.getText());
+        String tipoItem = jTextField2.getText();
+        BlockBuster blockBuster = new BlockBuster();
+        BlockBusterItem itemEncontrado = blockBuster.BuscarItem(codigo, tipoItem);
+        if (itemEncontrado != null) {
+            JOptionPane.showInputDialog("Item y Codigo encontrado");
+            System.out.println("Ítem encontrado:");
+            System.out.println(itemEncontrado.toString());
+        } else {
+            System.out.println("No se encontró ningún ítem con el código " + codigo + " y tipo " + tipoItem);
+            JOptionPane.showMessageDialog(null, "Codigo no encontrado ni tipo item");
+        }
     }//GEN-LAST:event_GuardarActionPerformed
 
     private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
