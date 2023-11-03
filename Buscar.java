@@ -7,6 +7,7 @@
  *
  * @author LENOVO
  */
+import javax.swing.JOptionPane;
 public class Buscar extends javax.swing.JFrame {
 
     /**
