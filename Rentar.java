@@ -7,6 +7,7 @@
  *
  * @author LENOVO
  */
+import javax.swing.JOptionPane;
 public class Rentar extends javax.swing.JFrame {
 
     /**
@@ -55,7 +56,14 @@ public class Rentar extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+     private void RentaActionPerformed(java.awt.event.ActionEvent evt) {                                      
+        // TODO add your handling code here:
+        int codigo = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el código:"));
+        String tipoItem = JOptionPane.showInputDialog("Ingrese el tipo de ítem (MOVIE o GAME):");
+        int dias = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad de días:"));
+        BlockBuster blockBuster = new BlockBuster();
+        blockBuster.rentar(codigo, tipoItem, dias);
+    }   
     private void RegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegresarActionPerformed
         // TODO add your handling code here:
         Main volv=new Main();
