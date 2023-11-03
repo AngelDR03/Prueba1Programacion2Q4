@@ -107,6 +107,7 @@ public class Rentar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton Renta;
     private javax.swing.JToggleButton Regresar;
     // End of variables declaration//GEN-END:variables
 }
